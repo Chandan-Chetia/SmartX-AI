@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+        <div class="history-container">
+            <h1>Chat History</h1>
+            <form action="/new-chat" method="POST" style="text-align:right; margin-bottom:1.5rem;">
+                <button type="submit" class="btn btn-danger start-new-chat-btn">Delete Chat</button>
+                <style>
+                .start-new-chat-btn {
+                    background-color: #dc3545;
+                    color: #fff;
+                    border: none;
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                }
+                .start-new-chat-btn:hover {
+                    background-color: #b52a37;
+                }
+                </style>
+            </form>
+            <div class="history-list">
+                <% chatHistory.forEach((chat, index) => { %>
+                    <div class="history-item">
+                        <div class="history-message user-message">
+                            <strong>You:</strong> <%= chat.userMessage %>
+                        </div>
+                        <div class="history-message bot-message">
+                            <strong>SmartX:</strong> <%- chat.botResponse %>
+                        </div>
+                        <div class="history-timestamp">
+                            <%= new Date(chat.timestamp).toLocaleString() %>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+<%- include('partials/footer') %>
