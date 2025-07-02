@@ -18,6 +18,8 @@ SmartX is a modern, full-stack AI chatbot web application powered by Google Gemi
 ## 🖥️ Screenshots
 
 ![Chat UI Screenshot](./public/screenshots/chat-ui.png)
+![Chat UI Screenshot](./public/screenshots/chat-ui2.png)
+![Chat UI Screenshot](./public/screenshots/chat-ui3.png)
 ![History Page Screenshot](./public/screenshots/history-ui.png)
 
 ---

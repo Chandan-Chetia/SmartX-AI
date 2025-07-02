@@ -7,10 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/chat-history')
       .then(res => res.json())
       .then(history => {
-        history.forEach(msg => {
-          if (msg.userMessage) addUserMessage(msg.userMessage);
-          if (msg.botResponse) addBotMessage(msg.botResponse);
-        });
+        if (history.length === 0) {
+          addBotMessage("Hi! 👋 I am <strong>SmartX</strong>, your AI assistant. Ask me anything, and I'll help you out with clear, friendly answers! 🤖✨");
+        } else {
+          history.forEach(msg => {
+            if (msg.userMessage) addUserMessage(msg.userMessage);
+            if (msg.botResponse) addBotMessage(msg.botResponse);
+          });
+        }
       });
 
     // Send message on button click
